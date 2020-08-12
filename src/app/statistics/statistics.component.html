@@ -1,0 +1,23 @@
+<kendo-tabstrip class="tabstrip"
+                (tabSelect)="onTabSelect($event)">
+  <kendo-tabstrip-tab [title]="'Teams'" [selected]="router.url.includes('teams')">
+    <ng-template kendoTabContent>
+      <teams></teams>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab [title]="'Players'" [selected]="router.url.includes('players')">
+    <ng-template kendoTabContent>
+      <players></players>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab [title]="'Stadiums'" [selected]="router.url.includes('stadiums')">
+    <ng-template kendoTabContent>
+      <stadiums></stadiums>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab [title]="'Cities'" [selected]="router.url.includes('cities')">
+    <ng-template kendoTabContent>
+      <cities></cities>
+    </ng-template>
+  </kendo-tabstrip-tab>
+</kendo-tabstrip>

@@ -1,0 +1,23 @@
+<form class="form" [formGroup]="searchResult" (ngSubmit)="search()">
+  <div class="form-group">
+    <h4 class="title">Team 1</h4>
+    <div class="action">
+      <kendo-dropdownlist formControlName="team1">
+      </kendo-dropdownlist>
+    </div>
+  </div>
+  <div class="form-group">
+    <h4 class="title">Team 2</h4>
+    <div class="action">
+      <kendo-dropdownlist formControlName="team2">
+      </kendo-dropdownlist>
+    </div>
+  </div>
+  <div class="form-group">
+    <h4 class="title">Player</h4>
+    <div class="action">
+      <input type="text" class="input" placeholder="Player" formControlName="player">
+    </div>
+  </div>
+  <button class="btn" type="submit">Search</button>
+</form>

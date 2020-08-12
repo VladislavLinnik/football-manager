@@ -1,0 +1,23 @@
+.tabstrip {
+    margin: 20px auto 0;
+    width: 80vw;
+
+    .k-tabstrip-items {
+        justify-content: space-between;
+
+        .k-link {
+            text-transform: uppercase;
+        }
+    }
+    
+    &--default-items-position {
+
+        .k-tabstrip-items:not(:last-child) {
+            justify-content: start;
+        }
+
+        .k-item {
+            margin-right: 50px;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+:host {
+    margin-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    box-shadow: 0 1px 15px 4px rgba(159, 106, 2, .8);
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__subsection {
+        position: absolute;
+        top: 100%;
+        z-index: 999;
+    }
+
+    &__item {
+        position: relative;
+        min-width: 120px;
+        text-align: center;
+        user-select: none;
+    }
+
+    &__link {
+        padding: 10px 25px;
+        display: block;
+        background-color: #000;
+        color: #fff;
+        transition: all .5s;
+
+        &.active {
+            background-color: #eee;
+            color: #000;
+        }
+
+        &:hover {
+            background-color: #eee;
+            color: #000;
+        }
+    }
+}

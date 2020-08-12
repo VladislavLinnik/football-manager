@@ -1,0 +1,40 @@
+<nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item"
+          (mouseover)="isVisibleStatisticsSubsection = true"
+          (mouseleave)="isVisibleStatisticsSubsection = false">
+          <a class="nav__link">Statistics</a>
+          <ul class="nav__subsection" *ngIf="isVisibleStatisticsSubsection">
+            <li class="nav__item">
+              <a routerLink="/statistics/teams" routerLinkActive="active" class="nav__link">Teams</a>
+            </li>
+            <li class="nav__item">
+              <a routerLink="/statistics/players" routerLinkActive="active" class="nav__link">Players</a>
+            </li>
+            <li class="nav__item">
+              <a routerLink="/statistics/stadiums" routerLinkActive="active" class="nav__link">Stadiums</a>
+            </li>
+            <li class="nav__item">
+              <a routerLink="/statistics/cities" routerLinkActive="active" class="nav__link">Cities</a>
+            </li>
+          </ul>
+      </li>
+      <li class="nav__item"
+          (mouseover)="isVisibleInfoSubsection = true"
+          (mouseleave)="isVisibleInfoSubsection = false">
+          <a class="nav__link">Info</a>
+          <ul class="nav__subsection" *ngIf="isVisibleInfoSubsection">
+            <li class="nav__item">
+              <!-- MATCHES MEANS A FUTURE MATCHES -->
+              <a routerLink="/info/matches" routerLinkActive="active" class="nav__link">Matches</a>
+              <!-- MATCHES MEANS A FUTURE MATCHES -->
+            </li>
+            <li class="nav__item">
+              <!-- RESULTS MEANS A PASSED MATCHES -->
+              <a routerLink="/info/results" routerLinkActive="active" class="nav__link">Results</a>
+              <!-- RESULTS MEANS A PASSED MATCHES -->
+            </li>
+          </ul>
+      </li>
+    </ul>
+</nav>

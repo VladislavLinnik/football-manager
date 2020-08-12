@@ -1,0 +1,49 @@
+<div *ngIf="isLoading" class="loader">
+  <div class="k-i-loading loader-icon"></div>
+</div>
+<div class="wrapper" *ngIf="!isLoading">
+  <kendo-grid [data]="teams"
+              [skip]="state.skip"
+              [pageSize]="state.take"
+              scrollable="virtual"
+              [rowHeight]="30"
+              [sortable]="true"
+              [sort]="state.sort"
+              [filterable]="true"
+              [filter]="state.filter"
+              (dataStateChange)="dataStateChanged($event)">
+      <kendo-grid-column field="name"
+                        title="Name">
+        <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+          <span>{{dataItem.name}}</span>
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column width="100" title="Actions">
+        <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+          <button kendoButton
+                  class="btn btn--black m-auto"
+                  title="Edit"
+                  (click)="editTeam(dataItem)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11.649" height="11.596"
+                 viewBox="0 0 11.649 11.596">
+              <g transform="translate(-0.461 -0.55)">
+                <rect width="0.787" height="3.297" transform="translate(8.021 2.27) rotate(-45)"/>
+                <rect width="8.205" height="3.297" transform="translate(1.813 8.484) rotate(-44.992)"/>
+                <path
+                  d="M26.11,3.154a.95.95,0,0,0,0-1.349L25.136.831a.95.95,0,0,0-1.349,0l-.487.487,2.36,2.361Z"
+                  transform="translate(-14.282 0)"/>
+                <path
+                  d="M.475,25.81a.291.291,0,0,0,.075.3.286.286,0,0,0,.187.075H.85l2.81-1.012L1.487,23Z"
+                  transform="translate(0 -14.038)"/>
+              </g>
+            </svg>
+          </button>
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+    <button kendoButton
+            class="btn btn--circle mt-15"
+            (click)="openAddTeamWindow()">
+      <span class="k-icon k-i-plus"></span>
+    </button>
+</div>

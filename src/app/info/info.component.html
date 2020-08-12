@@ -1,0 +1,13 @@
+<kendo-tabstrip class="tabstrip tabstrip--default-items-position"
+                (tabSelect)="onTabSelect($event)">
+    <kendo-tabstrip-tab [title]="'Matches'" [selected]="router.url.includes('matches')">
+        <ng-template kendoTabContent>
+            <matches></matches>
+        </ng-template>
+    </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab [title]="'Results'" [selected]="router.url.includes('results')">
+    <ng-template kendoTabContent>
+        <results></results>
+    </ng-template>
+  </kendo-tabstrip-tab>
+</kendo-tabstrip>
